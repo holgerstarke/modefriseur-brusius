@@ -25,6 +25,6 @@
 10. „Kein Film. Nur Realität auf Beat.“
 
 ## Hook-Regeln
-- Max. 8–12 Wörter
+- Max. 12 Wörter
 - Konflikt oder Gefühl sofort nennen
 - Klarer Cut + Untertitel
