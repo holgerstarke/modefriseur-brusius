@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media Agent Hub</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Social Media Agent Hub</h1>
+        <p>
+          Interaktive Agenten für Content, Reichweite, Profil- und Kommentar-Analyse
+          mit lokalem Wissensspeicher.
+        </p>
+      </header>
+
+      <section class="card">
+        <h2>1) Agent starten</h2>
+        <div class="grid two">
+          <label>
+            Agent
+            <select id="agentType">
+              <option value="content">Content Creator</option>
+              <option value="reach">Reichweiten Manager</option>
+              <option value="community">Community Manager</option>
+              <option value="profile">Künstlerprofil Analyst</option>
+            </select>
+          </label>
+          <label>
+            Inhaltstyp
+            <select id="contentType">
+              <option value="post">Post</option>
+              <option value="video">Video/Reel</option>
+              <option value="comment">Kommentare</option>
+              <option value="profile">Künstlerprofil</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Text/Notizen/Daten (Paste von Post, Caption, Kommentar, Bio, KPI)
+          <textarea
+            id="inputText"
+            rows="8"
+            placeholder="Hier Text, Caption, Kommentar-Sammlung oder Profilinfos einfügen..."
+          ></textarea>
+        </label>
+
+        <div class="actions">
+          <button id="runAgent">Analyse ausführen</button>
+          <button id="saveInsight">Aus Analyse Wissen speichern</button>
+          <label class="checkbox">
+            <input id="autoLearning" type="checkbox" />
+            Auto-Learning aktivieren (Analyse → Wissensspeicher)
+          </label>
+        </div>
+
+        <h3>Agent-Ausgabe</h3>
+        <pre id="agentOutput">Noch keine Analyse.</pre>
+        <div class="actions">
+          <button id="downloadReport">Analyse als .md herunterladen</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>2) Wissen aktualisieren (Upload & manuell)</h2>
+        <div class="grid two">
+          <label>
+            Wissenstitel
+            <input id="knowledgeTitle" placeholder="z. B. IG Hook Pattern" />
+          </label>
+          <label>
+            Quelle (optional)
+            <input id="knowledgeSource" placeholder="URL, Plattform, eigener Test" />
+          </label>
+        </div>
+        <label>
+          Wissensinhalt
+          <textarea
+            id="knowledgeContent"
+            rows="5"
+            placeholder="Regel, Muster, Insight, Hashtag-Learnings..."
+          ></textarea>
+        </label>
+        <div class="actions">
+          <button id="addKnowledge">Wissen hinzufügen</button>
+          <button id="exportKnowledgeJson">Wissen als .json herunterladen</button>
+          <button id="exportKnowledgeMd">Wissen als .md herunterladen</button>
+        </div>
+
+        <label class="upload">
+          Datei importieren (.md, .txt, .json, .csv)
+          <input id="uploadInput" type="file" multiple />
+        </label>
+        <p class="muted">
+          Upload kann Wissen ergänzen und Text direkt in das Analysefeld übernehmen.
+        </p>
+
+        <h3>Gespeichertes Wissen</h3>
+        <ul id="knowledgeList"></ul>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
